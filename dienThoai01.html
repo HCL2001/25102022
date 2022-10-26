@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let Mobile = function () {
+            this.battery = 0;
+            this.composeMemory = "";
+            this.inboxMemory = "";
+            this.status = false;
+            this.Mobile = function (battery, composeMemory, inboxMemory, sentMemory, status) {
+                this.battery = battery;
+                this.composeMemory = composeMemory;
+                this.inboxMemory = inboxMemory;
+                this.sentMemory = sentMemory;
+                this.status = status;
+                this.isOn = function () {
+                    return this.status;
+                }
+                this.turnOn = function () {
+                    if (this.status) {
+                        return true;
+                    }
+                }
+                this.turnOff = function () {
+                    if (status)
+                        this.status = false;
+                }
+                this.chargeBattery = function () {
+                    if (this.battery < 100 || this.battery >= 0)
+                        this.battery++;
+                }
+                this.composeMess = function () {
+                    let tinnhan = prompt("");
+                    this.composeMemory = tinnhan;
+                }
+                this.receivedMess = function () {
+                    alert("Co tin nhan moi");
+                }
+                this.sendMsg = function (toMobile) {
+                    this.sentMemory = this.composeMemory;
+                    toMobile.inboxMemory = this.sentMemory;
+                }
+                this.readInboxMsg = function (){
+                    return this.inboxMemory;
+                }
+                this.readSentMsg = function (){
+                    return this.sentMemory;
+                }
+
+            }
+        }
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+        nokia.Mobile(90, "", "", "", true);
+        alert(nokia.battery);
+        //console.log(nokia);
+        //console.log(iphone);
+    </script>
+</body>
+</html>
