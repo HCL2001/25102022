@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var switchButton = function (status, lamp){
+            this.status = status;
+            this.lamp = lamp;
+            this.switchOff = function (){
+                this.status = false;
+            }
+            this.switchOn = function (){
+                this.status = true;
+            }
+        }
+        var electricLamp = function (status){
+            this.status = status;
+            this.turnOff = function (){
+                this.status = true;
+            }
+            this.turnOn = function (){
+                this.status = false;
+            }
+        }
+    </script>
+</body>
+</html>
